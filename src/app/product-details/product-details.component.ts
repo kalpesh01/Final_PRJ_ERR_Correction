@@ -17,7 +17,6 @@ export class ProductDetailsComponent implements OnInit {
 
 
   comments: any = [{ "bid": "Helloworld", "bidderName": "Kalpesh" }];
-  hb: any;
   details: any = [];
 
 
@@ -30,40 +29,44 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.details = this.dp.productData;
-
     this.getProductData();
+    this.startTimer();
+    this.displayBids();
+  }
+
+  refresh(): void {
+    window.location.reload();
   }
 
 
-
-
   async placeBid(bd: any) {
-    this.hb = this.details[0].highestBid;
-    // console.log(bd + " ****** " + this.hb);
-    if (bd.value != null) {
-      //  if (bd.value <= this.hb) {
-      //   console.log("Bid  value less than highest bid");
-      // } else {
+    const hb = this.details[0].highestBid;
+    const mp = this.details[0].minPrice;
+    console.log(bd + " ****** " + hb);
+    if (bd != "") {
+      if (isNaN(bd)) {
+        console.log("Not A number");
+      } else if (bd <= hb && bd <= mp) {
+        console.log("Bid  value less than and equak to highest bid");
+      }
+      else {
 
-      //   const data = {
-      //     "pid": sessionStorage.getItem("pid"),
-      //     "bid_price": bd,
-      //     "buyerId": sessionStorage.getItem("sid")
-      //   }
+        const data = {
+          "pid": sessionStorage.getItem("pid"),
+          "bid_price": bd,
+          "buyerId": sessionStorage.getItem("sid")
+        }
 
-      //   const url = 'http://localhost:8080/api/Bidding/addBid';
-      //   const productRes: any = await this.http.post(url, data).toPromise();
-      //   console.log(productRes);
-      // }
-    } else if (isNaN(bd)) {
-      console.log("Not A number");
+        const url = 'http://localhost:8080/api/Bidding/updateBid';
+        const productRes: any = await this.http.post(url, data).toPromise();
+        console.log(productRes);
+        this.sp.HighestBid(sessionStorage.getItem("pid"));
+        this.refresh();
+      }
     } else {
       console.log("Enter the Value");
     }
   }
-
-
-
 
 
   async getProductData() {
@@ -82,5 +85,31 @@ export class ProductDetailsComponent implements OnInit {
 
     }
   }
+
+
+  async displayBids() {
+    const obj = { "pid": sessionStorage.getItem('pid') }
+    const url = 'http://localhost:8080/api/Bidding/getBidsOnPid';
+    const res = await this.http.post(url, obj).toPromise();
+    console.log(res);
+    this.comments = res;
+  }
+
+  time: number = 0;
+  interval: any;
+  play: boolean = false;
+  startTimer() {
+    this.play = true;
+    this.interval = setInterval(() => {
+      // console.log(this.time++);
+      this.refresh();
+    }, 30000)
+  }
+
+  pauseTimer() {
+    this.play = false;
+    clearInterval(this.interval);
+  }
+
 
 }

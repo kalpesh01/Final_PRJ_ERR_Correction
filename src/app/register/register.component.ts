@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
     // id: ['', Validators.required],
     type: ['', Validators.required],
     fname: ['', Validators.required],
-    img: ['', Validators.required],
+    // img: ['', Validators.required],
     lname: ['', Validators.required],
     password: ['', Validators.required],
     birthdate: ['', Validators.required],
