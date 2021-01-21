@@ -63,7 +63,7 @@
                   <strong>HighestBid</strong>
                 </th>
                 <td>
-                  <input class="bg-secondary text-light font-size:20px font-weight:bolder" disabled type="text"
+                  <input class="bg-secondary text-light font-size:20px font-weight:bolder" #hb disabled type="text"
                     value="{{item.highestBid}}">
                 </td>
               </tr>
@@ -81,7 +81,7 @@
         <div class="row">
           <div class="col-8 d-flex align-items-center"><input type="text" #bd class="form-control"></div>
           <div class="col-3 d-flex justify-content-end align-items-center "><button class="btn btn-dark btn-block"
-              (click)="placeBid(bd)">Place Bid</button></div>
+              (click)="placeBid(bd.value)">Place Bid</button></div>
         </div>
       </div>
     </div>

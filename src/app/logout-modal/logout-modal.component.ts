@@ -18,10 +18,9 @@ export class LogoutModalComponent implements OnInit {
 
   logOutAndClose() {
     sessionStorage.removeItem('sid');
-
+    sessionStorage.removeItem('pid');
     // dismiss the modal
     this.activeModal.dismiss();
-
     this.router.navigate(['login']);
   }
 }

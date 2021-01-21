@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class ServiceProviderService {
 
   highBid = [];
-
+  ppid: any;
   constructor(private http: HttpClient) { }
 
 
@@ -38,5 +38,8 @@ export class ServiceProviderService {
     const response: any = await this.http.post(url, obj).toPromise();
     this.highBid = response;
   }
+
+
+
 
 }

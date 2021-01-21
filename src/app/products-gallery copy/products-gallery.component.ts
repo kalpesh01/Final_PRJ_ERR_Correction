@@ -33,16 +33,16 @@ export class ProductsGalleryComponent implements OnInit {
   refresh(): void {
     window.location.reload();
   }
-  // http://localhost:8080/api/product/GetFarmerDetails
+
 
   async getProductsList() {
 
     const url = 'http://localhost:8080/api/product/GetFarmerDetails';
     const myres: any = await this.http.get(url).toPromise();
 
-    if (myres.length == 0) {
-      this.productList = myres;
-      // console.log("empty");
+    if (myres == 0) {
+      // this.productList = myres;
+
     } else {
       console.log("data came here");
       this.productList = myres;
@@ -51,9 +51,11 @@ export class ProductsGalleryComponent implements OnInit {
   }
 
   async viewBid(pid: any) {
-
+    sessionStorage.setItem('pid', pid);
+    this.sps.ppid = pid;
     const url = 'http://localhost:8080/api/product/getProductsUsingProductId?pid=' + pid;
     const productRes: any = await this.http.get(url).toPromise();
+    console.log(productRes);
     console.log(productRes);
     if (productRes.length == 0) {
       this.dp.productData = productRes;
@@ -62,7 +64,9 @@ export class ProductsGalleryComponent implements OnInit {
     } else {
       console.log("data came here");
       this.dp.productData = productRes;
+      console.log(this.dp.productData);
       console.log(productRes);
+      this.sps.ppid = pid;
       this.sps.HighestBid(pid);
 
       this.router.navigate(['/buyer_home/productBidDetails']);
