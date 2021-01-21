@@ -1,0 +1,36 @@
+.background{
+    /* background-image: url("./login_back.jpg"); */
+    background-image:url(https://3er1viui9wo30pkxh1v2nh4w-wpengine.netdna-ssl.com/wp-content/uploads/prod/sites/133/2020/11/shutter.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.title{
+    width: 100%;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.formblock{
+    width: 100%;
+    padding-left: 35px; 
+    padding-right: 35px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btncss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:60%;
+    height: 13%;
+    margin-left: 74px;
+    margin-right: 50px; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+
+}

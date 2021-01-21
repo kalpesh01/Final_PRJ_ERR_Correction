@@ -1,0 +1,82 @@
+<div class="container-fluid background">
+  <div class="row" style="height: 100vh">
+    <!-- Left Block -->
+    <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
+      <div class=" d-flex flex-column">
+        <h2
+          style="color:#ffffff; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">
+          Back To Login Page?</h2>
+        <a routerLink="/login" type="button" class="btn btn-primary">Login Here</a>
+      </div>
+    </div>
+
+
+    <!-- Right Block-->
+    <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center" [formGroup]="fbFormGroup">
+      <div class="row bg-info d-flex flex-column bg-white shadow mt-3" style="width: 75%; height: 85%;padding: 15px;">
+        <div class="alert alert-danger " role="alert" *ngIf="uiInvalidCredential">
+          Invalid Inputs!
+        </div>
+
+
+
+
+        <div class="h4 d-flex justify-content-center title"
+          style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+          Register Here
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <label>
+            <input type="radio" class="option-input radio" name="type" value="f" formControlName="type" />
+            Farmer
+          </label>
+          <label>
+            <input type="radio" class="option-input radio ml-2" name="type" value="b" formControlName="type" />
+            Buyer
+          </label>
+        </div>
+
+        <div class="formblock mt-3">
+          <input type="file" placeholder="image" (change)="OnSelectImage($event)" class="form-control"
+            formControlName="img" />
+        </div>
+
+        <div class="formblock mt-3">
+          <input type="text" placeholder="First name" class="form-control" formControlName="fname" />
+        </div>
+
+        <div class="formblock mt-3">
+          <input type="text" placeholder="Last name" class="form-control" formControlName="lname" />
+        </div>
+
+        <div class="formblock mt-3">
+          <input type="date" class="form-control" formControlName="birthdate" />
+        </div>
+
+        <div class="formblock mt-3 ">
+          <input type="text" placeholder="Enter Mobile" class="form-control" formControlName="mno" />
+        </div>
+
+
+        <div class="formblock mt-3">
+          <input type="email" placeholder="Enter Email" (blur)="checkEmail()" class="form-control"
+            formControlName="email" />
+          <div class="" role="alert" *ngIf="isValidEmail" style="color: red;">
+            Email Alredy Exist
+          </div>
+        </div>
+
+        <div class="formblock mt-3">
+          <input type="password" placeholder="Enter Password" class="form-control" formControlName="password" />
+        </div>
+
+        <button class="btn mt-3 btn-lg btn-warning btncss" [disabled]="!fbFormGroup.valid" (click)="registerHere()">
+
+          Register Here
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

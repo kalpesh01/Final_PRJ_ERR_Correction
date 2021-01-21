@@ -1,0 +1,122 @@
+<div class="container-fluid">
+  <!--Section: Block Content-->
+  <section class="mb-5 mt-5">
+
+    <div class="row " *ngFor="let item of details">
+      <div class="col-md-6 mb-4 mb-md-0">
+
+        <div id="mdb-lightbox-ui"></div>
+
+        <div class="mdb-lightbox">
+
+          <div class="row product-gallery mx-1">
+
+            <div class="col-12 mb-0">
+              <figure class="view overlay rounded z-depth-1 main-img">
+                <a href="https://cdn5.newsnationtv.com/images/2019/03/09/rice-16.jpg" data-size="510x623">
+                  <img src="https://cdn5.newsnationtv.com/images/2019/03/09/rice-16.jpg"
+                    style="width: 500px;height: 300px;" class="img-fluid z-depth-1">
+                </a>
+              </figure>
+            </div>
+
+            <br>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <tr>
+          <th class="pl-0 w-25" style="font-weight: bolder; font-size: 50px;" scope="row">
+            <strong>{{item.pname}}</strong>
+          </th>
+        </tr>
+
+
+        <div class="table-responsive">
+          <table class="table table-sm table-borderless mb-0">
+            <tbody>
+              <tr>
+                <th class="pl-0 w-20" scope="row"><strong>Product Id:</strong></th>
+                <td style="font-weight: bolder">{{item.pid}}</td>
+
+              </tr>
+              <br>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Minimum Price:</strong></th>
+                <td>{{item.minPrice}}</td>
+              </tr>
+              <br>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Quantity:</strong></th>
+                <td>{{item.quantity}} Kg</td>
+              </tr>
+              <br>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Bid End Date:</strong></th>
+                <td>{{item.endBDate}}</td>
+              </tr>
+
+              <tr>
+                <th class="pl-0 w-25" scope="row">
+                  <strong>HighestBid</strong>
+                </th>
+                <td>
+                  <input class="bg-secondary text-light font-size:20px font-weight:bolder" disabled type="text"
+                    value="{{item.highestBid}}">
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row  d-flex justify-content-center">
+      <div class="col-8 bg-warning d-flex flex-column justify-content-center" style="height: 70px;margin-bottom: 10px;">
+
+
+        <div class="row">
+          <div class="col-8 d-flex align-items-center"><input type="text" #bd class="form-control"></div>
+          <div class="col-3 d-flex justify-content-end align-items-center "><button class="btn btn-dark btn-block"
+              (click)="placeBid(bd)">Place Bid</button></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row  d-flex justify-content-center" *ngFor="let item of comments">
+      <div class="col-8 bg-warning border border-white d-flex flex-column " style="height: 100px;margin-bottom: 10px;">
+        <div class="row d-flex flex-row justify-content-between">
+
+
+          <!-- <span>{{comments[0].uid}}</span> -->
+
+
+
+          <span style="font-weight: bold;
+                  font-size: 20px;
+                  margin-left: 20px;
+                  margin-top: 15px;
+                  color: black;">{{item.bidderName}}</span>
+
+          <span style="font-family: Georgia;
+                       margin-right: 20px;
+                      margin-top: 15px;
+                      margin-bottom: 15px;
+                      color: black;">{{item.bid}}</span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </section>
+  <!--Section: Block Content-->
+
+
+</div>

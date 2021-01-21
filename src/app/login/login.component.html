@@ -1,0 +1,91 @@
+<div class="container-fluid background">
+  <div class="row" style="height: 100vh">
+    <!-- Left Block -->
+    <div class="col-12 col-md-6  d-flex flex-column justify-content-center align-items-center">
+      <div class=" d-flex flex-column">
+        <h2 style="color:white">DON'T HAVE AN ACCOUNT?</h2>
+
+        <a routerLink="/register" type="button" class="btn btn-primary">Register Here</a>
+      </div>
+    </div>
+
+
+    <!-- Right Block-->
+    <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center "
+      [formGroup]="fbFormGroup">
+      <div class="row d-flex flex-column bg-white shadow " style="width: 60%; height: 400px;padding: 15px;">
+
+        <div class=" alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+          Invalid Email and password !
+        </div>
+
+        <div class="h4 d-flex justify-content-center title">Application Login</div>
+
+        <div class="formblock">
+          <input type="text" placeholder="Enter email" class="col-12 form-control " formControlName="email" />
+        </div>
+
+        <div class="formblock">
+          <input type="password" placeholder="Enter Password" class="col-12 form-control " formControlName="password" />
+        </div>
+
+        <button class="btn btn-sm btn-warning btncss" [disabled]="!fbFormGroup.valid" (click)="loginProcessHere()">
+          Login Here
+        </button>
+        <a routerLink="/forgetpass" style="display: flex; justify-content: center;">Forget Password</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="container-fluid">
+  <div class="row" style="height: 100vh"> -->
+<!-- Left Block -->
+<!-- <div class="col bg-secondary d-flex flex-column justify-content-center align-items-center">
+      <div class=" d-flex flex-column">
+        <h2 style="color:bisque">DON'T HAVE AN ACCOUNT?</h2>
+
+        <a routerLink="/register" type="button" class="btn btn-primary">Register Here</a>
+      </div>
+    </div> -->
+
+<!-- Right Block-->
+<!-- <div class="col-6 bg-light d-flex flex-column justify-content-center align-items-center" [formGroup]="fbFormGroup">
+      <div class="">
+        <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+          A simple danger alert—check it out!
+        </div>
+
+        <div class="h4">Application Login</div>
+
+        <div>
+          <input type="text" placeholder="Enter email" class="form-control" formControlName="email" />
+        </div>
+
+        <div class="mt-1">
+          <input type="password" placeholder="Enter Password" class="form-control" formControlName="password" />
+        </div>
+
+        <button class="btn btn-sm btn-warning mt-2 mb-2" [disabled]="!fbFormGroup.valid" (click)="loginProcessHere()">
+          Login Here
+        </button>
+
+        <a routerLink="/forgetpass">Forget Password</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!--sirancha code 
+      
+      <div>
+        <fa-icon [icon]="faAirFreshener" style="font-size: 54px"></fa-icon>
+      </div>
+      <div class="h3">Welcome to my Appplication</div>
+      <div class="h6">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid,
+        harum!
+      </div>
+    </div> -->
