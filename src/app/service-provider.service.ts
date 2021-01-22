@@ -81,6 +81,8 @@ export class ServiceProviderService {
     console.log("test-1");
   }
 
+
+  //commented here
   async chnagedStatusProducts() {
     const url = 'http://localhost:8080/api/product/getDetailsChangedStatus';
     const response: any = await this.http.get(url).toPromise();
