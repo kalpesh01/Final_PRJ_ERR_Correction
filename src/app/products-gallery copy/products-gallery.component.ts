@@ -29,6 +29,7 @@ export class ProductsGalleryComponent implements OnInit {
   ngOnInit(): void {
 
     this.getProductsList();
+    this.sps.liveBidding();
   }
   refresh(): void {
     window.location.reload();

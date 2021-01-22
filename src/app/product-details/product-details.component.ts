@@ -102,9 +102,9 @@ export class ProductDetailsComponent implements OnInit {
   startTimer() {
     this.play = true;
     this.interval = setInterval(() => {
-      // console.log(this.time++);
+
       this.refresh();
-    }, 30000)
+    }, 60000)
   }
 
   pauseTimer() {
