@@ -18,7 +18,8 @@ export class ProductDetailsComponent implements OnInit {
 
   comments: any = [{ "bid": "Helloworld", "bidderName": "Kalpesh" }];
   details: any = [];
-
+  mp: any;
+  hb: any;
 
   constructor(private dp: DataProviderService,
     private http: HttpClient,
@@ -40,13 +41,13 @@ export class ProductDetailsComponent implements OnInit {
 
 
   async placeBid(bd: any) {
-    const hb = this.details[0].highestBid;
-    const mp = this.details[0].minPrice;
-    console.log(bd + " ****** " + hb);
+    this.hb = this.details[0].highestBid;
+    this.mp = this.details[0].minPrice;
+
     if (bd != "") {
       if (isNaN(bd)) {
         console.log("Not A number");
-      } else if (bd <= hb && bd <= mp) {
+      } else if (bd <= this.hb || bd <= this.mp) {
         console.log("Bid  value less than and equak to highest bid");
       }
       else {
