@@ -11,18 +11,25 @@
         </div>
 
         <!-- sign in button -->
-        <div class="col-4" style="display: flex; justify-content: center;">
-            <a class="btn btn-outline-warning mr-1" routerLink="">About Us</a>
-            <a class="btn btn-outline-warning mr-1" routerLink="">
+        <div class="col-6" style="display: flex; ">
+            <a class="btn btn-outline-warning mr-2 btncss" routerLink="/farmer_home/">Add Product</a>
+            <a class="btn btn-outline-warning mr-2 btncss" routerLink="/farmer_home/showproduct">Show MyProducts</a>
+            <a class="btn btn-outline-warning mr-2 btncss" routerLink="">About Us</a>
+            <a class="btn btn-outline-warning mr-2 btncss" routerLink="">
                 {{sessId}}
             </a>
-            <button class="btn btn-outline-warning mr-1" (click)="processLogout()">
+            <button class="btn btn-outline-warning mr-1 btncss" (click)="processLogout()">
                 Log Out
             </button>
         </div>
     </div>
 
 
-    <router-outlet></router-outlet>
+
+
+
+    <div>
+        <router-outlet></router-outlet>
+    </div>
 
 </div>

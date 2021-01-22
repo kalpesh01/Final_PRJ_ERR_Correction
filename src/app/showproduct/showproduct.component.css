@@ -1,0 +1,30 @@
+.background{
+    background-image: url("https://3er1viui9wo30pkxh1v2nh4w-wpengine.netdna-ssl.com/wp-content/uploads/prod/sites/133/2020/11/shutter.jpg");
+    z-index: unset;
+   
+    background-size: auto;
+    background-position: inherit;
+
+    
+    
+    
+}
+.label{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    margin-bottom: 1%;
+    margin-left: 10%;
+}
+.imagePreview{
+    
+    width: 100%;
+    height: 225px;
+    border: solid;
+    background-position: center;
+    border-radius: 1rem;
+  background-color:#fff;
+    background-size: cover;
+  background-repeat:no-repeat;
+    display: inline-block;
+  box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+}

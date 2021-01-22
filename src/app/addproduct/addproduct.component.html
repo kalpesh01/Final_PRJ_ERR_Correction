@@ -1,0 +1,64 @@
+<div style="height:100vh;">
+  <div class="row d-flex background"
+    style="flex-direction: row;height: 100vh; justify-content: center; align-items: center;" [formGroup]="fbFormGroup">
+    <div class="row bg-info d-flex flex-column bg-white shadow mt-3"
+      style="align-items: center;border-radius: 1rem;width: 75%; height: 98%;padding: 15px;">
+      <div class="alert alert-danger " role="alert" *ngIf="uiInvalidCredential">
+        Invalid Inputs!
+      </div>
+
+      <div class="h4 d-flex justify-content-center title"
+        style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        Add Product Here
+      </div>
+
+      <div class="row d-flex flex-column">
+
+        <!-- <div class="form-group row mt-5">
+          <label for="pid" class="col-5" >PID :</label>
+        <input type="text" id="pid" placeholder="Product Id" class="form-control col-7 " formControlName="pid" />
+    
+    </div>-->
+        <div class="form-group row mt-2">
+          <label for="pimage" class="col-5">Product Image :</label>
+          <input type="file" placeholder="Product Image" id="pimage" class="form-control col-7" formControlName="img" />
+        </div>
+
+        <div class="form-group row mt-2">
+          <label for="pname" class="col-5">Product Name :</label>
+          <input type="text" id="pname" placeholder="Product name" class="form-control col-7" formControlName="pname" />
+        </div>
+
+        <div class="formblock row mt-2">
+          <label for="pbdate" class="col-5">End Bidding Date :</label>
+          <input type="date" (blur)="dateValidate(dt.value)" class="form-control col-7" #dt id="pbdate"
+            formControlName="endBDate" />
+
+          <div class="" role="alert" *ngIf="isValidDate" style="color: red;">
+            Invalid Date Selected
+          </div>
+        </div>
+
+        <div class="formblock mt-2 row ">
+          <label for="pprice" class="col-5">Minimum Price :</label>
+          <input type="text" placeholder="Set minimum price  " class="form-control col-7" formControlName="minPrice" />
+        </div>
+
+
+        <div class="formblock mt-4 row">
+          <label for="pquantity" class="col-5">Quantity :</label>
+          <input type="text" placeholder="Enter product quantity in KG" class="form-control col-7"
+            formControlName="quantity" />
+        </div>
+
+
+        <div class="d-flex mt-2" style="justify-content: space-around;">
+          <button class="btn mt-3 btn-lg btn-warning btncss" [disabled]="!fbFormGroup.valid" (click)="addProduct()">
+            Add Product
+          </button>
+          <button class="btn mt-3 btn-lg btn-warning btncss">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

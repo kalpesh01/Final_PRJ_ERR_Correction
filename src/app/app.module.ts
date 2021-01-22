@@ -17,6 +17,9 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ProductsGalleryComponent } from './products-gallery copy/products-gallery.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ForgetpassComponent } from './forgetpass/forgetpass.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
+import { ShowproductComponent } from './showproduct/showproduct.component';
+import { FarmerProductBidDetailsComponent } from './farmer-product-bid-details/farmer-product-bid-details.component';
 
 
 @NgModule({
@@ -30,8 +33,10 @@ import { ForgetpassComponent } from './forgetpass/forgetpass.component';
     AdminHomeComponent,
     ProductsGalleryComponent,
     ProductDetailsComponent,
-    ForgetpassComponent
-
+    ForgetpassComponent,
+    AddproductComponent,
+    ShowproductComponent,
+    FarmerProductBidDetailsComponent
   ],
   imports: [
     BrowserModule,

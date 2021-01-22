@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { convertMetaToOutput } from '@angular/compiler/src/render3/util';
+
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataProviderService } from '../data-provider.service';
@@ -16,7 +16,7 @@ export class ProductDetailsComponent implements OnInit {
 
 
 
-  comments: any = [{ "bid": "Helloworld", "bidderName": "Kalpesh" }];
+  allbids: any = [{ "bid": "Helloworld", "bidderName": "Kalpesh" }];
   details: any = [];
   mp: any;
   hb: any;
@@ -93,7 +93,7 @@ export class ProductDetailsComponent implements OnInit {
     const url = 'http://localhost:8080/api/Bidding/getBidsOnPid';
     const res = await this.http.post(url, obj).toPromise();
     console.log(res);
-    this.comments = res;
+    this.allbids = res;
   }
 
   time: number = 0;

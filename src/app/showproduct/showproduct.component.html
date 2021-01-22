@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+
+
+    <table class=" table table-stripped">
+        <thead>
+            <tr>
+                <th>Pid </th>
+                <th>ProductName </th>
+                <th>Quantity </th>
+                <th>MinPrice </th>
+                <th>EndBidDate </th>
+                <th>HighestBid </th>
+                <th>status </th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of productList">
+            <tr>
+
+                <td> {{item.pid }}</td>
+                <td> {{item.pname}}</td>
+                <td> {{ item.quantity}}
+                <td> {{ item.minPrice}}</td>
+                <td> {{ item.endBDate }}</td>
+                <td> {{ item.highestBid }}</td>
+                <td> {{ item.status }}</td>
+                <td>
+
+                    <a (click)="viewBid(item.pid)">
+                        <div style="color: rgb(26, 24, 24);font-size:22px;font:bold;padding-left: 10px;"> View</div>
+                    </a>
+
+
+                </td>
+            </tr>
+        </tbody>
+    </table>

@@ -8,14 +8,25 @@ import { RegisterComponent } from "./register/register.component";
 import { ProductsGalleryComponent } from './products-gallery copy/products-gallery.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ForgetpassComponent } from './forgetpass/forgetpass.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
+import { ShowproductComponent } from './showproduct/showproduct.component';
+import { FarmerProductBidDetailsComponent } from './farmer-product-bid-details/farmer-product-bid-details.component';
 
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'farmer_home', component: FarmerHomeComponent },
   { path: 'forget_password', component: ForgetpassComponent },
+  {
+    path: 'farmer_home', component: FarmerHomeComponent,
+    children: [
+      { path: '', component: AddproductComponent },
+      { path: 'showproduct', component: ShowproductComponent },
+      { path: 'farmerProductBidDetails', component: FarmerProductBidDetailsComponent }
+    ],
+  },
+
   {
     path: 'buyer_home',
     component: BuyerHomeComponent,
