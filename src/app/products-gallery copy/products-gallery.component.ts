@@ -55,8 +55,8 @@ export class ProductsGalleryComponent implements OnInit {
     this.sps.ppid = pid;
     const url = 'http://localhost:8080/api/product/getProductsUsingProductId?pid=' + pid;
     const productRes: any = await this.http.get(url).toPromise();
-    console.log(productRes);
-    console.log(productRes);
+    // console.log(productRes);
+    // console.log(productRes);
     if (productRes.length == 0) {
       this.dp.productData = productRes;
       this.router.navigate(['']);
@@ -64,12 +64,18 @@ export class ProductsGalleryComponent implements OnInit {
     } else {
       console.log("data came here");
       this.dp.productData = productRes;
-      console.log(this.dp.productData);
-      console.log(productRes);
+      // console.log(this.dp.productData);
+      // console.log(productRes);
       this.sps.ppid = pid;
       this.sps.HighestBid(pid);
 
       this.router.navigate(['/buyer_home/productBidDetails']);
     }
   }
+
+
+  updateSatus() {
+
+  }
+
 }
