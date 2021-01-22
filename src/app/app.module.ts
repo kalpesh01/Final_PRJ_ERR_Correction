@@ -16,6 +16,7 @@ import { BuyerHomeComponent } from './buyer-home/buyer-home.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ProductsGalleryComponent } from './products-gallery copy/products-gallery.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ForgetpassComponent } from './forgetpass/forgetpass.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     AdminHomeComponent,
     ProductsGalleryComponent,
     ProductDetailsComponent,
+    ForgetpassComponent
 
   ],
   imports: [

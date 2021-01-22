@@ -1,0 +1,56 @@
+<!-- forget Password Page -->
+
+<div class="container-fluid background ">
+    <div class="row" style="height: 100vh">
+        <!-- Left Block -->
+        <div class="col  d-flex flex-column justify-content-center align-items-center">
+            <div class=" d-flex flex-column">
+                <h2 style="color:white">Back To Login Page?</h2>
+
+
+                <a routerLink="/login" type="button" class="btn btn-primary">Login Here</a>
+            </div>
+        </div>
+
+
+        <!-- Right Block-->
+        <div class="col-12 col-md-6  d-flex flex-column justify-content-center align-items-center"
+            [formGroup]="fbFormGroup">
+            <div class="row d-flex flex-column bg-white shadow " style="width: 60%; height: 400px;padding: 15px;">
+
+                <div class=" h4 d-flex justify-content-center title">Reset Password</div>
+                <div class="" role="alert" *ngIf="uiInvalidCredential" style="color: red;">
+                    Password not reset
+                </div>
+                <!-- 
+                <div class="formblock">
+                    <input type="text" placeholder="Enter email" class="form-control" formControlName="email" />
+                    <div class="validations"
+                        *ngIf="fbFormGroup.controls['email'].hasError('required') && fbFormGroup.controls['email'].touched">
+                        Enter address is requird.
+                    </div>
+                    <div class="validations" *ngIf="fbFormGroup.controls['email'].hasError('pattern')">
+                        Invalid Email address</div>
+                </div> -->
+                <div class="formblock mt-3">
+                    <input type="email" placeholder="Enter Email" (blur)="checkEmail()" class="form-control"
+                        formControlName="email" />
+                    <div class="" role="alert" *ngIf="isValidEmail" style="color: red;">
+                        not registered Email
+                    </div>
+                </div>
+
+
+                <div class=" formblock">
+                    <input type="password" placeholder="Enter New Password" *ngIf="isValid" class="form-control"
+                        formControlName="password" />
+                </div>
+
+                <button class="btn btn-primary btncss" [disabled]="!fbFormGroup.valid" (click)="forgetProcessHere()">
+                    Submit
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>

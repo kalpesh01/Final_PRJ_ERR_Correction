@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from "./register/register.component";
 import { ProductsGalleryComponent } from './products-gallery copy/products-gallery.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ForgetpassComponent } from './forgetpass/forgetpass.component';
 
 
 
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'farmer_home', component: FarmerHomeComponent },
-
+  { path: 'forget_password', component: ForgetpassComponent },
   {
     path: 'buyer_home',
     component: BuyerHomeComponent,
