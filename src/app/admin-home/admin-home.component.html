@@ -12,8 +12,8 @@
 
         <!-- sign in button -->
         <div class="col-4" style="display: flex; justify-content: center;">
-            <a class="btn btn-outline-warning mr-1" routerLink="">About Us</a>
-            <a class="btn btn-outline-warning mr-1" routerLink="">
+            <a class="btn btn-outline-warning mr-1" routerLink="/about_us">About Us</a>
+            <a class="btn btn-outline-warning mr-1" routerLink="/profile">
                 {{sessId}}
             </a>
             <button class="btn btn-outline-warning mr-1" (click)="processLogout()">
@@ -22,7 +22,30 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-4 mb-4" *ngFor="let usr of userList">
+            <div class="card h-10 d-flex justify-content-center align-item-center">
+                <a href="#"><img class="card-img-top m-3"
+                        src="https://p.kindpng.com/picc/s/131-1318090_man-farmer-light-skin-tone-icon-farmer-icon.png"
+                        alt="" style="width: 10em; height: 10em;"></a>
+                <div class="row">
+                    <div class="col-6 card-body">
+                        <span style="color: black; font-weight: bolder;">{{usr.fname}}</span>
+                        <br />
+                        <span style="color: black; font-weight: bolder;">{{usr.lname}}</span>
+                    </div>
+                    <div class="col-6 card-body">
+                        <button type="button" (click)="goToUserDelete(usr.email)"
+                            class="btn btn-warning">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <router-outlet></router-outlet>
+
+
 
 </div>

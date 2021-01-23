@@ -14,7 +14,7 @@ export class AddproductComponent implements OnInit {
   productlist: [] | undefined;
   public uiInvalidCredential = false;
   public isValidDate = false;
-
+  public invalidDate = false;
 
   public fbFormGroup = this.fb.group({
 
@@ -41,14 +41,19 @@ export class AddproductComponent implements OnInit {
   }
 
   async addProduct() {
-    const data = this.fbFormGroup.value;
-    data['uid'] = sessionStorage.getItem('sid');
-    const url = 'http://localhost:8080/api/product/addProduct';
-    const myres = await this.http.post(url, data, { responseType: 'text' }).toPromise();
-    console.log(myres);
-    console.log("Product Added Successfully");
-    this.fbFormGroup.reset();
 
+    if (this.isValidDate == true) {
+      this.uiInvalidCredential = true;
+      this.fbFormGroup.reset();
+    } else {
+      const data = this.fbFormGroup.value;
+      data['uid'] = sessionStorage.getItem('sid');
+      const url = 'http://localhost:8080/api/product/addProduct';
+      const myres = await this.http.post(url, data, { responseType: 'text' }).toPromise();
+      console.log(myres);
+      console.log("Product Added Successfully");
+      this.fbFormGroup.reset();
+    }
   }
 
 
@@ -57,6 +62,7 @@ export class AddproductComponent implements OnInit {
     // console.log("**********");
     // console.log(db);
     if (dt <= this.myDate) {
+      this.fbFormGroup.invalid
       this.isValidDate = true;
     } else {
       this.isValidDate = false;

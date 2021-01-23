@@ -24,13 +24,13 @@ export class RegisterComponent implements OnInit {
   public fbFormGroup = this.fb.group({
     // id: ['', Validators.required],
     type: ['', Validators.required],
-    fname: ['', Validators.required],
+    fname: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]){1,15}$/)]],
     // img: ['', Validators.required],
-    lname: ['', Validators.required],
-    password: ['', Validators.required],
-    birthdate: ['', Validators.required],
-    mno: ['', Validators.required],
-    email: ['', [Validators.required, Validators.pattern(/([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})/)]],
+    lname: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]){1,15}$/)]],
+    password: ['', [Validators.required, Validators.pattern(/^([a-zA-Z])([!-@0-9a-zA-Z]){5,20}$/)]],
+    birthdate: ['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
+    mno: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+    email: ['', [Validators.required, Validators.pattern(/([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{1,5})/)]],
 
   });
 

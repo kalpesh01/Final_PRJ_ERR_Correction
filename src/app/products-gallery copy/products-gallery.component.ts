@@ -27,6 +27,9 @@ export class ProductsGalleryComponent implements OnInit {
 
 
   ngOnInit(): void {
+    if (!sessionStorage.getItem('sid')) {
+      this.router.navigate(['login']);
+    }
 
     this.getProductsList();
     this.sps.liveBidding();
@@ -75,8 +78,6 @@ export class ProductsGalleryComponent implements OnInit {
   }
 
 
-  updateSatus() {
 
-  }
 
 }

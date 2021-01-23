@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <div class="row sticky-top form-inline"
+        style="display: flex;height: 60px; background-color: rgb(32, 31, 31);justify-content: space-between;">
+
+        <!-- logo -->
+        <div class="col-4">
+            <a routerLink="/home">
+                <h3 style="color: white;">Agro Bidding System</h3>
+            </a>
+        </div>
+
+        <!-- sign in button -->
+        <div class="col-4" style="display: flex; justify-content: center;">
+            <a class="btn btn-outline-warning mr-1" routerLink="/login">Login</a>
+            <a class="btn btn-outline-warning mr-1" routerLink="/register">Register</a>
+            <a class="btn btn-outline-warning mr-1" routerLink="/about_us">About Us</a>
+        </div>
+    </div>
+    <div class="row" style="height: 100vh">
+
+        <div class="col-6 d-flex flex-column text-light justify-content-center align-items-center"
+            style="background:grey">
+
+            <div class="mt-4 mb-5 font-weight-bolder text-light" style="font-size: 45px;">
+                About Us
+            </div>
+
+            <p style="font-size: 20px;">
+                <em>Agro Bidding System is a web application in which farmers will be able to show case there agri
+                    products on website and buyers can do a bid on particular products. The main objective of this
+                    project is to obtain best value and the highest price for the farmers agri products.
+                </em>
+            </p>
+
+        </div>
+
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center"
+            style="height: 100vh;background:rgb(183, 226, 243);">
+            <div class="h2 font-weight-bold text-body mt-1 mb-3">
+                OUR TEAM
+            </div>
+            <div class="row d-flex mb-4">
+
+                <div>
+                    <h5>Kalpesh Patil</h5>
+                    <h6>DEVELOPER-PL</h6>
+                    <p>pkalpeshgmail.com</p>
+                </div>
+
+            </div>
+
+            <div class="row d-flex mb-3">
+
+                <div class="col-6 d-flex">
+
+                    <div>
+                        <h5>Mangesh Dase</h5>
+                        <h6>DEVELOPER</h6>
+                        <p>mangesh@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="col-6 d-flex">
+
+                    <div>
+                        <h5>Sanjit Shelke</h5>
+                        <h6>DEVELOPER</h6>
+                        <p>sanjit@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row d-flex mb-3">
+                <div class="col-6 d-flex">
+                    <div>
+                        <h5>Sneha Somwanshi</h5>
+                        <h6>DEVELOPER</h6>
+                        <p>sneha@gmail.com</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6 d-flex">
+                    <div>
+                        <h5>Deepanjan Joth</h5>
+                        <h6>DEVELOPER</h6>
+                        <p>deepanjan@gmail.com</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <router-outlet></router-outlet>
+</div>

@@ -19,6 +19,7 @@ export class FarmerHomeComponent implements OnInit {
     if (!sessionStorage.getItem('sid')) {
       this.router.navigate(['login']);
     }
+    this.pauseTimer()
   }
 
   processLogout() {
@@ -26,6 +27,23 @@ export class FarmerHomeComponent implements OnInit {
     this.modalService.open(LogoutModalComponent, {
       centered: true,
     });
+  }
+
+
+  time: number = 0;
+  interval: any;
+  play: boolean = false;
+  startTimer() {
+    this.play = true;
+    this.interval = setInterval(() => {
+
+
+    }, 30000)
+  }
+
+  pauseTimer() {
+    this.play = false;
+    clearInterval(this.interval);
   }
 
 

@@ -40,8 +40,9 @@ export class LoginComponent implements OnInit {
     // console.log(result.length);
     // console.log(roll + " " + umail);
     if (result.length == 0) {
+      this.uiInvalidCredential = true;
       this.fbFormGroup.reset();
-      this.router.navigate(['login']);
+      // this.router.navigate(['login']);
     }
     else {
 
@@ -62,7 +63,8 @@ export class LoginComponent implements OnInit {
       }
       else {
         this.uiInvalidCredential = true;
-        this.router.navigate(['login']);
+        // this.router.navigate(['login']);
+        this.fbFormGroup.reset();
       }
 
     }

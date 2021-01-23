@@ -2,7 +2,7 @@
   <div class="row d-flex background"
     style="flex-direction: row;height: 100vh; justify-content: center; align-items: center;" [formGroup]="fbFormGroup">
     <div class="row bg-info d-flex flex-column bg-white shadow mt-3"
-      style="align-items: center;border-radius: 1rem;width: 75%; height: 98%;padding: 15px;">
+      style="align-items: center;border-radius: 1rem;width: 40%; height: auto;padding: 15px;">
       <div class="alert alert-danger " role="alert" *ngIf="uiInvalidCredential">
         Invalid Inputs!
       </div>
@@ -33,10 +33,7 @@
           <label for="pbdate" class="col-5">End Bidding Date :</label>
           <input type="date" (blur)="dateValidate(dt.value)" class="form-control col-7" #dt id="pbdate"
             formControlName="endBDate" />
-
-          <div class="" role="alert" *ngIf="isValidDate" style="color: red;">
-            Invalid Date Selected
-          </div>
+          <span role="alert" *ngIf="isValidDate" style="color: red;">Invalid Date Selected</span>
         </div>
 
         <div class="formblock mt-2 row ">
@@ -59,6 +56,11 @@
           <button class="btn mt-3 btn-lg btn-warning btncss">Reset</button>
         </div>
       </div>
+      <div class="mt-5 text-danger ml-5">
+        <p>Note:Plz Select Post Date</p>
+      </div>
     </div>
   </div>
+
+
 </div>

@@ -1,8 +1,9 @@
 <div>
-<!--Section: Block Content-->
+  <!--Section: Block Content-->
   <section class="mb-5 mt-5">
 
     <div class="row " *ngFor="let item of details">
+
       <div class="col-md-6 mb-4 mb-md-0">
 
         <div id="mdb-lightbox-ui"></div>
@@ -27,39 +28,47 @@
 
 
       <div class="col-md-6">
-        <tr>
+        <!-- <tr>
           <th class="pl-0 w-25" style="font-weight: bolder; font-size: 50px;" scope="row">
             <strong>{{item.pname}}</strong>
           </th>
-        </tr>
+        </tr> -->
 
 
         <div class="table-responsive">
-          <table class="table table-sm table-borderless mb-0">
+          <table class="table table-borderless  table-dark table-sm  text-white mb-0" style="width: 60%;">
             <tbody>
               <tr>
-                <th class="pl-0 w-20" scope="row"><strong>Product Id:</strong></th>
+                <th class="pl-3 w-25" style="font-weight: bolder; font-size: 50px;" scope="row">
+                  <strong>{{item.pname}}</strong>
+                </th>
+              </tr>
+              <br>
+
+
+              <tr>
+                <th class="pl-3 w-20" scope="row"><strong>Product Id:</strong></th>
                 <td style="font-weight: bolder">{{item.pid}}</td>
 
               </tr>
               <br>
               <tr>
-                <th class="pl-0 w-25" scope="row"><strong>Minimum Price:</strong></th>
+                <th class="pl-3 w-25" scope="row"><strong>Minimum Price:</strong></th>
                 <td>{{item.minPrice}}</td>
               </tr>
               <br>
               <tr>
-                <th class="pl-0 w-25" scope="row"><strong>Quantity:</strong></th>
+                <th class="pl-3 w-25" scope="row"><strong>Quantity:</strong></th>
                 <td>{{item.quantity}} Kg</td>
               </tr>
               <br>
               <tr>
-                <th class="pl-0 w-25" scope="row"><strong>Bid End Date:</strong></th>
+                <th class="pl-3 w-25" scope="row"><strong>Bid End Date:</strong></th>
                 <td>{{item.endBDate}}</td>
               </tr>
 
               <tr>
-                <th class="pl-0 w-25" scope="row">
+                <th class="pl-3 w-25" scope="row">
                   <strong>HighestBid</strong>
                 </th>
                 <td>
@@ -74,34 +83,11 @@
       </div>
     </div>
 
-    
-    
-    
-
-
-    <div class="row  d-flex justify-content-center" *ngFor="let item of comments">
-      <div class="col-8 bg-warning border border-white d-flex flex-column " style="height: 100px;margin-bottom: 10px;">
-        <div class="row d-flex flex-row justify-content-between">
-
-
-          <!-- <span>{{comments[0].uid}}</span> -->
 
 
 
-          <span style="font-weight: bold;
-                  font-size: 20px;
-                  margin-left: 20px;
-                  margin-top: 15px;
-                  color: black;">{{item.bidderName}}</span>
 
-          <span style="font-family: Georgia;
-                       margin-right: 20px;
-                      margin-top: 15px;
-                      margin-bottom: 15px;
-                      color: black;">{{item.bid}}</span>
-        </div>
-      </div>
-    </div>
+
 
 
 

@@ -11,13 +11,21 @@ import { ForgetpassComponent } from './forgetpass/forgetpass.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { ShowproductComponent } from './showproduct/showproduct.component';
 import { FarmerProductBidDetailsComponent } from './farmer-product-bid-details/farmer-product-bid-details.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DeleteProfileComponent } from './delete-profile/delete-profile.component';
+import { HomeComponent } from './home/home.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
 const routes: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forget_password', component: ForgetpassComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'delete_profile', component: DeleteProfileComponent },
+  { path: 'about_us', component: AboutUsComponent },
   {
     path: 'farmer_home', component: FarmerHomeComponent,
     children: [
@@ -36,8 +44,10 @@ const routes: Routes = [
       { path: 'productBidDetails', component: ProductDetailsComponent },
     ],
   },
-  { path: 'admin_home', component: AdminHomeComponent },
-  { path: '', redirectTo: '/register', pathMatch: 'full' },
+  {
+    path: 'admin_home', component: AdminHomeComponent
+  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({

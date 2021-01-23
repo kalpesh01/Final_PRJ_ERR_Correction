@@ -42,7 +42,7 @@ export class ShowproductComponent implements OnInit {
   }
 
   async viewBid(pid: any) {
-
+    sessionStorage.setItem('fpid', pid);
     const url = 'http://localhost:8080/api/product/getProductsUsingProductId?pid=' + pid;
     const productRes: any = await this.http.get(url).toPromise();
     console.log(productRes);
